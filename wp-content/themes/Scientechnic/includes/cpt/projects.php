@@ -63,11 +63,11 @@ function create_expertise_taxonomy() {
     'show_in_rest' => true,
     'show_admin_column' => true,
     'query_var' => true,
-    //'rewrite' => array( 'slug' => 'expertise' ),
+    'rewrite' => array( 'slug' => 'year' ),
   ));
  
 }
-add_action( 'init', 'create_expertise_taxonomy', 0 );
+add_action( 'init', 'create_expertise_taxonomy' );
 
 // Taxonomy Bussiness Units
 
@@ -102,7 +102,7 @@ $labels = array(
 
 // Taxonomy Location
 
-add_action( 'init', 'create_location_hierarchical_taxonomy_', 0 );   
+add_action( 'init', 'create_location_hierarchical_taxonomy_');   
 function create_location_hierarchical_taxonomy_() {
 $labels = array(
     'name' => _x( 'Location', 'taxonomy general name' ),

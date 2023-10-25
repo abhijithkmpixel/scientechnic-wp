@@ -154,7 +154,7 @@ $posts = array(
  $query = new WP_Query($posts);
   $total = $query->found_posts;
   if($query->have_posts()){
-  // echo '<div class="tab_content filtercontents active_mesh row" id="solutionLists">';
+  
     while ($query ->have_posts()) : $query->the_post(); ?>
 
               <div class="clearfix">
@@ -163,7 +163,7 @@ $posts = array(
                   <div class="units-list">
                     <div class="single-block">
                       <a
-                        href="dubai-water-canal/index.html"
+                        href="<?php echo get_permalink(); ?>"
                         class="block-icon"
                         style="
                           background-image: url('./Uploads/icon-round-arrow.svg');
@@ -171,26 +171,27 @@ $posts = array(
                       ></a>
                       <a
                         class="grad-black"
-                        href="dubai-water-canal/index.html"
+                        href="<?php echo get_permalink(); ?>"
                       ></a>
                       <div class="inner-have">
+                        <?php 
+$project_list_image = get_field('project_list_image');
+if( !empty( $project_list_image ) ): ?>
                         <div
                           class="block_image"
                           style="
-                            background-image: url('./Uploads/92a9053c22075b88712193a53c160ddb_f2996.png');
+                            background-image: url('<?php echo esc_url($project_list_image['url']); ?>');
                           "
                         ></div>
+                      <?php endif; ?>
                         <div class="block-content">
                           <h5>
-                            <a href="dubai-water-canal/index.html"
+                            <a href="<?php echo get_permalink(); ?>"
                               ><?php echo the_title();?></a
                             >
                           </h5>
-                          <!-- <p><strong>Year:</strong> 2016                                        <br/><strong>Location:</strong> Dubai                                        <br/><strong>Project Type:</strong> Case Study                                    </p> -->
                           <p>
-                            Design and engineering of electrical, lighting,
-                            <br />
-                            audio-video and ITS works at the Boardwalk
+                            <?php echo the_field('single_project_description');?>
                           </p>
                         </div>
                       </div>
