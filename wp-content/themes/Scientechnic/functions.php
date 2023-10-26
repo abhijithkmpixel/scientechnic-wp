@@ -77,5 +77,6 @@ add_action( 'after_setup_theme', 'theme_setup' );
     require get_template_directory() . '/includes/cpt/projects.php';
     require get_template_directory() . '/includes/cpt/news.php';
     require get_template_directory() . '/includes/cpt/partners.php';
+    require get_template_directory() . '/includes/cpt/products.php';
 
     ?>

@@ -13,7 +13,7 @@ foreach ($termd as $newterm) {
           <ul class="slides-container">
             <li>
             	<?php 
-        				$single_project_banner_image = get_field('single_project_banner_image',$post->ID);
+        				$single_project_banner_image = get_field('single_project_banner_image','option');
 						if( !empty( $single_project_banner_image) ): ?>
               <img
                 class="center center"
@@ -28,11 +28,11 @@ foreach ($termd as $newterm) {
         <div class="slider-content">
           <div class="container move-uper">
             <div class="content-holdingg wow fadeInUp">
-              <h1><?php the_field('single_banner_title');?></h1>
+              <h1><?php the_field('single_banner_title','option');?></h1>
               <p>
                 <span
                   id="docs-internal-guid-58f91567-01c6-4cb6-7374-36ca9ea29827"
-                  ><?php the_field('single_banner_description');?></span
+                  ><?php the_field('single_banner_description','option');?></span
                 >
               </p>
             </div>
@@ -210,6 +210,13 @@ if( !empty( $project_list_image ) ): ?>
       </div>
 
 <!-- End  -->
-
+<!-- Loading the instagram feed -->
+      <div class="insta-feeds">
+        <div class="topheading-insta center">
+          <span class="fa fa-twitter"></span>
+          <span class="instatitle">@Scientechnic</span>
+        </div>
+      </div>
+      <div class="social-feed-container tweet-feeds"></div>
 
  <?php get_footer();?>

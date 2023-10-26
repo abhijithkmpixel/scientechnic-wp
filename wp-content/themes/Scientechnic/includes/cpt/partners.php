@@ -36,7 +36,7 @@ function wpdocs_codex_partners_new_init() {
       'labels'             => $labels,
       'public'             => true,
       'publicly_queryable' => true,
-      'taxonomies'         => array('partners-category'),
+     // 'taxonomies'         => array('partners-category'),
       'show_ui'            => true,
       'show_in_menu'       => true,
       'query_var'          => true,
@@ -55,32 +55,3 @@ function wpdocs_codex_partners_new_init() {
 add_action( 'init', 'wpdocs_codex_partners_new_init' );
 
 
-function partners_category_taxonomy() {
- 
-  $labels = array(
-    'name' => _x( 'Categories', 'taxonomy general name' ),
-    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Categories' ),
-    'all_items' => __( 'All Categories' ),
-    'parent_item' => __( 'Parent Category' ),
-    'parent_item_colon' => __( 'Parent Category:' ),
-    'edit_item' => __( 'Edit Category' ), 
-    'update_item' => __( 'Update Category' ),
-    'add_new_item' => __( 'Add New Category' ),
-    'new_item_name' => __( 'New Category Name' ),
-    'menu_name' => __( 'Categories' ),
-  );    
-
-  register_taxonomy('partners-category',array('partnerss'), array(
-    'hierarchical' => true,
-    'labels' => $labels,
-    'show_ui' => true,
-    'show_in_rest' => true,
-    'show_admin_column' => true,
-    'query_var' => true,
-    // 'rewrite' => array( 'slug' => 'ind-category' ),
-  ));
- 
-}
-
-add_action( 'init', 'partners_category_taxonomy', 0 );
